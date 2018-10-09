@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,, maximum-scale=1.0, user-scalable=no">
+    <title>Vue多页面模板</title>
+    <link rel="stylesheet" href="./static/reset.css">
+    <!-- 统计 -->
+    <script src="//m.jr.jd.com/crayfish/zui/unionlog/1.0.0/unionlog.js"></script>
+
+    <!-- 退出登录 -->
+    <script src="//plogin.m.jd.com/st/js/logout.js"></script>
+    <script>
+        // 移动端适配
+        (function (document, window) {
+            var docEl = document.documentElement;
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 16 * (clientWidth / 375) + 'px';
+            };
+            if (!document.addEventListener) return;
+            window.addEventListener(resizeEvt, recalc, false);
+            document.addEventListener('DOMContentLoaded', recalc, false);
+        }(document, window));
+
+        // 去除alert
+        (function (document, window) {
+            if (window.location.hostname === 'm.jr.jd.com') {
+                window.alert = function () {}
+                var items = ["debug", "error", "info", "log", "warn", "dir", "dirxml", "table", "trace", "group", "groupCollapsed", "groupEnd", "clear", "count", "countReset", "assert", "profile", "profileEnd", "time", "timeEnd", "timeStamp", "context", "memory"]
+                for (var i = 0; i < items.length; i++) {
+                    var name = items[i]
+                    window.console[name] = function () {}
+                }
+            }
+        })(document, window);
+    </script>
+
+    <!-- 原生通信 -->
+    <script src="//m.jr.jd.com/crayfish/zui/bridge/1.0.7/bridge.js"></script>
+    <!-- 微信通信 -->
+    <script src="//m.jr.jd.com/crayfish/zui/weixin_api/1.0.0/weixin_api.js"></script>
+    <!-- 商城通信 -->
+    <script src="////m.jr.jd.com/statics/jdShare.min.js"></script>
+
+    <!-- 判断微信app等不同渠道，从url或者cookie取参数用的公共方法 -->
+    <!-- <script src="//m.jr.jd.com/crayfish/zui/device/1.0.0/device.js"></script> -->
+    <script src="./static/zepto.js"></script>
+</head>
+
+<body class="body">
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+</body>
+
+</html>
