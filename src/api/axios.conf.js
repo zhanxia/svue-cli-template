@@ -1,11 +1,7 @@
 import axios from 'axios'
 import qs from 'qs'
 import { Toast } from 'mint-ui';
-import {getChannel} from "@/public/util.js";
 
-// axios.defaults.timeout = 5000
-let channel = getChannel();
-// let requestChannel = channel == "jdjr" ? "/gw/generic/jrm/na/" : "/gw/generic/jrm/h5/";
 let requestChannel  = "";
 if(location.host.indexOf("minner") > -1 || location.host.indexOf("localhost") > -1){
   axios.defaults.baseURL = `//msinner.jr.jd.com${requestChannel}`;
