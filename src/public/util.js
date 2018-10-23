@@ -1,17 +1,3 @@
-import img1 from "@/components/Header/images/bg.png";
-import img2 from "@/components/Header/images/bg2.png";
-import img3 from "@/components/Header/images/fudeng.png";
-import img4 from "@/components/Header/images/jinbi1.png";
-import img5 from "@/components/Header/images/jinbi2.png";
-import img6 from "@/components/Header/images/quan.png";
-import img7 from "@/components/Header/images/quan1.png";
-import img8 from "@/components/Header/images/quan2.png";
-import img9 from "@/components/Header/images/quan3.png";
-import img10 from "@/components/Header/images/quan4.png";
-// import img11 from "@/components/Header/images/title_new.png";
-import img12 from "@/components/Header/images/zhezhao.png";
-import img13 from "@/components/Header/images/zhudeng1.png";
-import img14 from "@/components/Header/images/zhudeng2.png";
 
 export function getChannel() {
   let channel = "";
@@ -295,9 +281,7 @@ export function goAppReceivePage() {
 
 export function downloadImgs(callback) {
   var imgNeed = [
-    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
-    data_source_100001051.headImgSrc,
-    img12, img13, img14
+    ''
   ],
     // 需要预加载的图片地址列表
     len = imgNeed.length,
