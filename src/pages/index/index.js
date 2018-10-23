@@ -10,7 +10,6 @@ import 'mint-ui/lib/style.css'
 import $ from 'jquery';
 import Zepto from '../../../static/zepto'
 import device from '../../../static/device';
-// let unionlog = require("../../../static/unionlog.js")
 Vue.use(MintUI)
 
 Vue.config.productionTip = false
