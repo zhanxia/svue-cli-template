@@ -1,1 +1,54 @@
-export const getJoinRecordList = []
+//转盘数据
+export const initRotaryTable = {
+  resultCode: 0,
+  resultMsg:"外层网关调用结果说明",
+  resultData:{
+    success : true,
+    code:"success",
+    msg:"执行状态结果说明",
+    data:[
+      {
+        rewardAmount:"10",
+        rewardName:"京东支付",
+        rewardDes:"满399可用",
+        rewardBg:1
+      },{
+        rewardAmount:"30",
+        rewardName:"京东支付",
+        rewardDes:"满399可用",
+        rewardBg:1
+      },{
+        rewardAmount:"100",
+        rewardName:"京东支付",
+        rewardDes:"满399可用",
+        rewardBg:2
+      },{
+        rewardAmount:"50",
+        rewardName:"京东支付",
+        rewardDes:"满399可用",
+        rewardBg:1
+      },{
+        rewardAmount:"100",
+        rewardName:"京东支付",
+        rewardDes:"满399可用",
+        rewardBg:1
+      },{
+        rewardAmount:"100",
+        rewardName:"京东支付",
+        rewardDes:"满399可用",
+        rewardBg:2
+      },{
+        rewardAmount:null,
+        rewardName:null,
+        rewardDes:null,
+        rewardBg:1
+      },{
+        rewardAmount:"100",
+        rewardName:"京东支付",
+        rewardDes:"满399可用",
+        rewardBg:1
+      }
+    ]
+  }
+      
+}

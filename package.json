@@ -1,14 +1,14 @@
 {
-  "name": "svue-cli-template",
+  "name": "{{name}}",
   "version": "1.0.0",
-  "description": "A boilerplate of vue for Multiple Page App.",
-  "author": "jiazhanxia <958989581@qq.com>",
+  "author": "{{author}}",
+  "description": "{{description}}",
   "private": false,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "rm -rf ./dist && node build/build.js",
-    "upload": "cd ./dist && rm -f ./grab-ticket.zip && zip -r ./grab-ticket.zip * && jdf minner ./grab-ticket.zip  /flowh5/2018/10/grab-ticket"
+    "upload": "cd ./dist && rm -f ./{{name}}.zip && zip -r ./{{name}}.zip * && jdf minner ./{{name}}.zip  /flowh5/2018/10/{{name}}"
   },
   "dependencies": {
     "axios": "^0.18.0",

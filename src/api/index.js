@@ -8,25 +8,17 @@ ISMOCK = false
 if (window.location.hostname === 'm.jd.jr.com') {
   ISMOCK = false
 }
-
 //获取参与并激活列表接口(奖券)
-export function getJoinRecordList (params) {
+export function initRotaryTable (params) {
   if (ISMOCK) {
-    console.warn('getJoinRecordList' + ' is mocked.')
-    return Promise.resolve(mock.getJoinRecordList)
+    console.warn('initRotaryTable' + ' is mocked.')
+    return Promise.resolve(mock.initRotaryTable)
   }
 
-  return axios.post(url.getJoinRecordList, params).then(resultData => {
-    let {
-      code,
-      msg,
-      data
-    } = resultData
-
+  return axios.post(url.initRotaryTable, params).then(data => {
     if (typeof data === 'string') {
       data = JSON.parse(data)
     }
-
     return data
   })
 }

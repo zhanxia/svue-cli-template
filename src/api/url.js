@@ -1,4 +1,3 @@
 export default {
-  getJoinRecordList: 'getJoinRecordList',
-  
+  initRotaryTable: '', // 初始化转盘
 }

@@ -1,11 +1,16 @@
 import axios from 'axios'
 import qs from 'qs'
+import { Toast } from 'mint-ui';
+import {getChannel} from "@/public/util.js";
 
 // axios.defaults.timeout = 5000
+let channel = getChannel();
+// let requestChannel = channel == "jdjr" ? "/gw/generic/jrm/na/" : "/gw/generic/jrm/h5/";
+let requestChannel  = "";
 if(location.host.indexOf("minner") > -1 || location.host.indexOf("localhost") > -1){
-  axios.defaults.baseURL = `//msinner.jr.jd.com`;
+  axios.defaults.baseURL = `//msinner.jr.jd.com${requestChannel}`;
 }else{
-  axios.defaults.baseURL = `//ms.jr.jd.com`;
+  axios.defaults.baseURL = `//ms.jr.jd.com${requestChannel}`;
 }
 
 axios.interceptors.request.use(function (config) {
@@ -14,6 +19,7 @@ axios.interceptors.request.use(function (config) {
   } else {
     config.params = config.params || {}
   }
+
   return config
 }, function (error) {
   return Promise.reject(error)
@@ -21,7 +27,6 @@ axios.interceptors.request.use(function (config) {
 
 axios.interceptors.response.use(function (res) {
   let {resultCode,resultMsg,resultData} = res.data;
-
   //未登录, 跳登录
   // let channel = getChannel();
   // if(resultCode == 3  &&  channel=="weixin" ){
@@ -32,7 +37,19 @@ axios.interceptors.response.use(function (res) {
   //   return
   // }
 
-  return resultData;
+  // if(Number(resultCode) !== 0){
+  //   console.log('error', res)
+  //   return {
+  //     resultCode:resultCode,
+  //     resultData:resultData
+  //   }
+  // }
+
+  // return resultData;
+  return {
+    resultCode:resultCode,
+    resultData:resultData
+  }
 }, function (error) {
   // Do something with response error
   // Toast("出错了！");
