@@ -10,3 +10,7 @@
 2. 进入[project-name]目录执行npm run build 安装项目依赖包（node9.0.0及以上）
 3. 进入[project-name]目录执行npm run upload 安装项目依赖包（node6.3.1）
 
+## 发布生产环境
+
+进入[project-name]/dist目录，将[project-name].zip手动复制到生产目录，然后再做后续上线处理
+
