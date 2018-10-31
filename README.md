@@ -8,7 +8,7 @@
 ## 发布预发环境
 1. 电脑中需要安装jdf(npm install jdf -g),需要node6.3.1版本
 2. 进入[project-name]目录执行npm run build 安装项目依赖包（node9.0.0及以上）
-3. 进入[project-name]目录执行npm run upload 安装项目依赖包（node6.3.1）
+3. 进入[project-name]目录执行npm run upload 将项目部署到预发环境（node6.3.1）
 
 ## 发布生产环境
 
